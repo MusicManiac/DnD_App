@@ -1,0 +1,10 @@
+name;size_modifier;grapple_modifier;height_or_length;weight;space_ft;natural_reach_tall_ft;natural_reach_long_ft
+Fine;8;-16;6 in. or less;1/8 lb. or less;0.5;0;0
+Diminutive;4;-12;6 in. - 1 ft.;1/8 lb. - 1 lb.;1;0;0
+Tiny;2;-8;1 ft. - 2 ft.;1 lb. - 8 lb.;2.5;0;0
+Small;1;-4;2 ft. - 4 ft.;8 lb. - 60 lb.;5;5;5
+Medium;0;0;4 ft. - 8 ft.;60 lb. - 500 lb.;5;5;5
+Large;-1;4;8 ft. - 16 ft.;500 lb. - 2 tons;10;10;5
+Huge;-2;8;16 ft. - 32 ft.;2 tons - 16 tons;15;15;10
+Gargantuan;-4;12;32 ft. - 64 ft.;16 tons - 125 tons;20;20;15
+Colossal;-8;16;64 ft. or more;125 tons or more;30;30;20
