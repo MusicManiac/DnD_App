@@ -15,7 +15,7 @@ Create, retrieve, update, and delete objects that are properly related to other 
 - Special Materials
 - Race Types and Subtypes
 - and other major game systems
-
+- 
 ## Technologies, Packages and Applications used
 
 - [Python 3.12.7](https://www.python.org/downloads/release/python-3127/)
@@ -93,12 +93,10 @@ Setting up project:
    python -m pip install --upgrade pip
    pip install -r requirements.txt
    ```
-5. Make migrations and import provided initial data
+5. Make migrations and import provided initial data (only if chose option 3 in "Set up the database"):
    ```
    python manage.py makemigrations
    python manage.py migrate
-   
-   (only if chose option 3 in "Set up the database"):
    python manage.py run_all_import_commands
    ```
 6. Run the server with `python manage.py runserver`
