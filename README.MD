@@ -15,7 +15,9 @@ Create, retrieve, update, and delete objects that are properly related to other 
 - Special Materials
 - Race Types and Subtypes
 - and other major game systems
-- 
+
+![img](https://i.imgur.com/7KWgjXo.png)
+
 ## Technologies, Packages and Applications used
 
 - [Python 3.12.7](https://www.python.org/downloads/release/python-3127/)
