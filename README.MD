@@ -16,7 +16,6 @@ Create, retrieve, update, and delete objects that are properly related to other 
 - Race Types and Subtypes
 - and other major game systems
 
-
 ## Technologies, Packages and Applications used
 
 - [Python 3.12.7](https://www.python.org/downloads/release/python-3127/)
@@ -125,4 +124,4 @@ All of this is also accessible via browser by opening http://127.0.0.1:8000/api/
 
 
 ## License
-[MIT](https://github.com/MusicManiac/DnDApp/blob/master/LICENSE)
+[MIT](https://github.com/MusicManiac/DnD_App/blob/master/LICENSE)
