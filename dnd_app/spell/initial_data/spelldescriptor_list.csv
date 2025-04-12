@@ -1,0 +1,20 @@
+Name;Description
+Acid;
+Air;
+Chaotic;
+Cold;
+Darkness;
+Death;
+Earth;
+Electricity;
+Evil;
+Fear;
+Fire;
+Force;
+Good;
+Language-Dependent;A language-dependent spell uses intelligible language as a medium for communication. If the target cannot understand or cannot hear what the caster of a language-dependant spell says the spell fails.
+Lawful;
+Light;
+Mind-Affecting;A mind-affecting spell works only against creatures with an Intelligence score of 1 or higher.
+Sonic;
+Water;

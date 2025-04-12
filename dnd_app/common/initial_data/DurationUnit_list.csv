@@ -1,0 +1,9 @@
+Name;Name Plural;duration_in_seconds;Description
+Second;Seconds;1;
+Round;Rounds;6;Round is approximately 6 seconds.
+Minute;Minutes;60;
+Hour;Hours;3600;
+Day;Days;86400;
+Week;Weeks;604800;
+Month;Months;2592000;
+Year;Years;31536000;

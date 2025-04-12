@@ -1,0 +1,22 @@
+Name;Alphabet;is_secret
+Abyssal;Infernal;False
+Aquan;Elven;False
+Auran;Draconic;False
+Celestial;Celestial;False
+Common;Common;False
+Draconic;Draconic;False
+Druidic;Druidic;True
+Dwarven;Dwarven;False
+Elven;Elven;False
+Giant;Dwarven;False
+Gnome;Dwarven;False
+Goblin;Dwarven;False
+Gnoll;Common;False
+Halfling;Common;False
+Ignan;Draconic;False
+Infernal;Infernal;False
+Orc;Dwarven;False
+Sylvan;Elven;False
+Terran;Dwarven;False
+Undercommon;Elven;False
+Any (Except secret languages);;False

@@ -1,0 +1,12 @@
+Name;approximate_time_in_seconds;Description
+Not an Action;0;Some activities are so minor that they are not even considered free actions. They literally don't take any time at all to do and are considered an inherent part of doing something else.
+Free Action;0;Free actions consume a very small amount of time and effort. You can perform one or more free actions while taking another action normally. However, there are reasonable limits on what you can really do for free.
+Swift Action;1;A swift action consumes a very small amount of time, but represents a larger expenditure of effort and energy than a free action. You can perform only a single swift action per turn.
+Immediate Action;1;An immediate action is very similar to a swift action, but can be performed at any time — even if it's not your turn.
+Standard Action;3;A standard action allows you to do something, most commonly make an attack or cast a spell.
+Move Action;3;A move action allows you to move your speed or perform an action that takes a similar amount of time.
+Full-Round Action;6;A full-round action consumes all your effort during a round. The only movement you can take during a full-round action is a 5-foot step before, during, or after the action. Some full-round actions can be taken as standard actions, but only in situations when you are limited to performing only a standard action during your round. The descriptions of specific actions, below, detail which actions allow this option.
+One Minute;60;
+Ten Minutes;600;
+One Hour;3600;
+

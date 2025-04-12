@@ -1,0 +1,12 @@
+Name;Desc
+Item;General category for items
+Weapon;General category for weapons
+Armor;General category for armor
+Consumable;General category for consumables
+Tool;General category for tools
+Wand;General category for wands
+Staff;General category for staves
+Ring;General category for rings
+Rod;General category for rods
+Potion;General category for potions
+Scroll;General category for scrolls

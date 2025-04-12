@@ -1,0 +1,6 @@
+[coverage:report]
+omit =
+    */tests/*
+    */migrations/*
+    */static/*
+    __init__.py

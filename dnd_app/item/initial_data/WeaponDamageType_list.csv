@@ -1,0 +1,7 @@
+Name;Description
+Piercing;Piercing damage is caused by weapons with a pointed tip, such as arrows, daggers, and spears.
+Slashing;Slashing damage is caused by weapons with a sharp edge, such as swords, axes, and claws.
+Bludgeoning;Bludgeoning damage is caused by weapons that crush or bludgeon, such as hammers, maces, and clubs.
+Bludgeoning/Piercing;Bludgeoning/Piercing damage is caused by weapons that can deal either bludgeoning or piercing damage, such as Hammer, gnome hooked.
+Slashing/Piercing;Slashing/Piercing damage is caused by weapons that can deal either slashing or piercing damage, such as daggers.
+Bludgeoning and Piercing;Bludgeoning and Piercing damage is caused by weapons that can deal both bludgeoning and piercing damage, such as a morningstar.

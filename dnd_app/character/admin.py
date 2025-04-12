@@ -1,99 +1,114 @@
 from django.contrib import admin
 
+from character.forms import CharacterForm, CharacterCharacterClassForm
 from character.models import (
-    Attribute,
-    Race,
-    AttributeModifier,
-    RaceAttributeModifier,
-    Alignment,
-    CharacterType,
-    Language,
-    RaceLanguage,
-    TraitClassification,
-    Trait,
-    CharacterTypeTrait,
+    Character,
+    CharacterAbilityScore,
+    CharacterCharacterClass,
+    CharacterFeat,
+    CharacterLanguage,
+    Inventory,
+    CharacterSkill,
+    InventoryItem,
+    CharacterInventory,
 )
+from utils.admin_classes import LockedInline
 
 
-@admin.register(Attribute)
-class AttributeAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "abbreviation", "description")
-    search_fields = ()
-    list_filter = ()
+class InventoryItemInline(admin.TabularInline):
+    model = InventoryItem
+    extra = 5
+    raw_id_fields = ("item",)
+    readonly_fields = ("item_stack_weight", "item_stack_value")
 
 
-@admin.register(AttributeModifier)
-class AttributeModifierAdmin(admin.ModelAdmin):
-    list_display = ("id", "value", "attribute")
-    search_fields = (
-        "value",
-        "attribute__name",
-    )
-    list_filter = ("attribute",)
-    ordering = ("attribute__name", "value")
-
-
-@admin.register(Alignment)
-class AlignmentAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "abbreviation", "description")
-    search_fields = ("name", "abbreviation")
-    list_filter = ()
-
-
-@admin.register(TraitClassification)
-class TraitClassificationAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "description")
-    search_fields = ("name", "description")
-    list_filter = ()
-
-
-@admin.register(Trait)
-class TraitAdmin(admin.ModelAdmin):
-    list_display = ("id", "short_description", "long_description")
-    search_fields = ("short_description", "long_description")
-    list_filter = ("trait_classification",)
-
-
-class CharacterTypeTraitInline(admin.TabularInline):
-    model = CharacterTypeTrait
-    extra = 2
-    raw_id_fields = ["trait"]
-
-
-@admin.register(CharacterType)
-class CharacterTypeAdmin(admin.ModelAdmin):
-    inlines = (CharacterTypeTraitInline,)
-    list_display = ("id", "name", "description", "source")
-    search_fields = ()
-    list_filter = ()
-
-
-@admin.register(Language)
-class LanguageAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "source")
-    search_fields = ("name",)
-
-
-class RaceLanguageInline(admin.TabularInline):
-    model = RaceLanguage
-    extra = 2
-    autocomplete_fields = ["language"]
-
-
-class RaceAttributeModifierInline(admin.TabularInline):
-    model = RaceAttributeModifier
-    extra = 2
-    raw_id_fields = ["attribute_modifier"]
-
-
-@admin.register(Race)
-class RaceAdmin(admin.ModelAdmin):
-    inlines = (RaceAttributeModifierInline, RaceLanguageInline)
+@admin.register(Inventory)
+class InventoryAdmin(admin.ModelAdmin):
+    inlines = (InventoryItemInline,)
     list_display = (
         "id",
+        "character_ids",
         "name",
-        "description",
-        "source",
+        "capacity",
+        "total_weight",
+        "total_value",
+        "available_capacity",
     )
     search_fields = ("name",)
-    list_filter = ()
+
+    # Custom method to display related Character IDs
+    def character_ids(self, obj):
+        # Get the related CharacterInventory objects and return the Character IDs
+        return ", ".join(
+            str(ci.character.id) for ci in obj.characterinventory_set.all()
+        )
+
+    character_ids.short_description = "Character ID(s)"
+
+
+class CharacterAbilityScoreInline(LockedInline):
+    model = CharacterAbilityScore
+    extra = 0
+    min_num = 6
+    max_num = 6
+    verbose_name_plural = "Ability Scores"
+    readonly_fields = ("modifier",)
+    raw_id_fields = ("ability",)
+
+
+class CharacterCharacterClassInline(admin.TabularInline):
+    form = CharacterCharacterClassForm
+    model = CharacterCharacterClass
+    extra = 0
+    min_num = 1
+    verbose_name_plural = "Character Classes"
+
+
+class CharacterFeatInline(LockedInline):
+    model = CharacterFeat
+    extra = 0
+    raw_id_fields = ("feat",)
+
+
+class CharacterLanguageInline(LockedInline):
+    model = CharacterLanguage
+    extra = 0
+    raw_id_fields = ("language",)
+
+
+class CharacterInventoryInline(admin.TabularInline):
+    model = CharacterInventory
+    extra = 1
+    raw_id_fields = ("inventory",)
+
+
+class CharacterSkillInline(LockedInline):
+    model = CharacterSkill
+    extra = 0
+    readonly_fields = ("total_bonus",)
+
+
+@admin.register(Character)
+class CharacterAdmin(admin.ModelAdmin):
+    form = CharacterForm
+    inlines = (
+        CharacterAbilityScoreInline,
+        CharacterCharacterClassInline,
+        CharacterFeatInline,
+        CharacterLanguageInline,
+        CharacterInventoryInline,
+        CharacterSkillInline,
+    )
+    list_display = ("id", "name", "race", "alignment", "level")
+    readonly_fields = (
+        "class_levels",
+        "fortitude_save",
+        "reflex_save",
+        "will_save",
+        "multiattack_bab",
+        "initiative",
+        "list_of_languages",
+    )
+    search_fields = ("name",)
+    list_filter = ("alignment", "level")
+    raw_id_fields = ("additionally_learned_languages",)

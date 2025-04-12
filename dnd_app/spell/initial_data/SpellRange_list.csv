@@ -1,0 +1,8 @@
+Name;Description
+Personal;The spell affects only you.
+Touch;You must touch a creature or object to affect it. A touch spell that deals damage can score a critical hit just as a weapon can. A touch spell threatens a critical hit on a natural roll of 20 and deals double damage on a successful critical hit. Some touch spells allow you to touch multiple targets. You can touch as many willing targets as you can reach as part of the casting, but all targets of the spell must be touched in the same round that you finish casting the spell.
+Close;The spell reaches as far as 25 feet away from you. The maximum range increases by 5 feet for every two full caster levels.
+Medium;The spell reaches as far as 100 feet + 10 feet per caster level.
+Long;The spell reaches as far as 400 feet + 40 feet per caster level.
+Unlimited;The spell reaches anywhere on the same plane of existence.
+Specific Range (60ft);Some spells have no standard range category, just a range expressed in feet.
