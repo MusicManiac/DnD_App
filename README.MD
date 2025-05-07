@@ -16,7 +16,7 @@ Create, retrieve, update, and delete objects that are properly related to other 
 - Race Types and Subtypes
 - and other major game systems
 
-![img](https://i.imgur.com/7KWgjXo.png)
+![img](https://i.imgur.com/SKt9fXe.png)
 
 ## Technologies, Packages and Applications used
 
@@ -84,12 +84,13 @@ Setting up project:
      4. Right-click on the newly created database and select "Restore...".
      5. Choose the provided backup file (`dnd_app_backup.sql`) and click "Restore".
    - Option 3: Ignore provided database backup and use custom command to create bare minimum database (command provided further in this README)
-2. (If using PyCharm) Setup Python Interpreter and virtual environment
-   1. Go to Settings -> Python Interpreter -> Add Interpreter -> Select Local Interpreter -> select installed python version 3.12.7
-   2. Open new terminal in PyCharm, it will be using venv by default
-3. (If not using Pycharm and setting up venv manually) Set up virtual environment
-   1. In project directory run `virtualenv manual_venv --python=python3.12.7` which will create new virtual environment.
-   2. Enter your venv with `source manual_venv/bin/activate`
+3. Set up venv 
+   - (If using PyCharm) Setup Python Interpreter and virtual environment
+     1. Go to Settings -> Python Interpreter -> Add Interpreter -> Select Local Interpreter -> select installed python version 3.12.7
+     2. Open new terminal in PyCharm, it will be using venv by default
+   - (If not using Pycharm and setting up venv manually) Set up virtual environment
+     1. In project directory run `virtualenv manual_venv --python=python3.12.7` which will create new virtual environment.
+     2. Enter your venv with `source manual_venv/bin/activate`
 4. In previously opened virtual environment terminal, install required packages:
    ```
    python -m pip install --upgrade pip

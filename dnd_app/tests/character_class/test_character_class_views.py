@@ -344,7 +344,7 @@ def test_character_class_delete_view_fail(
     assert ClassSkill.objects.filter(character_class=char_class).exists()
     assert ClassBsbProgression.objects.filter(character_class=char_class).exists()
     assert ClassBonusLanguage.objects.filter(character_class=char_class).exists()
-    # Check that there's a dependand object
+    # Check that there's a dependent object
     assert RaceFavoredClass.objects.filter(character_class=char_class).exists()
 
     response = client.delete(f"/api/character_class/character_classes/{char_class.id}/")

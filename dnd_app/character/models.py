@@ -221,7 +221,7 @@ class Character(models.Model):
             character_language.language.name
             for character_language in self.characterlanguage_set.all()
         ]
-        all_languages = race_languages + learned_languages
+        all_languages = set(race_languages + learned_languages)
 
         return ", ".join(all_languages)
 

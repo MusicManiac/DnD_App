@@ -38,7 +38,6 @@ class Size(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20, unique=True)
 
-    # FK
     size_modifier = models.IntegerField(default=0, blank=False, null=False)
     grapple_modifier = models.IntegerField(default=0, blank=False, null=False)
     height_or_length = models.CharField(max_length=20)
